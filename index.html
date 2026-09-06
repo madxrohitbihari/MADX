@@ -57,7 +57,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 999999;
+            z-index: 99999;
             padding: 20px;
         }
 
@@ -671,7 +671,6 @@
 
     <div id="toast">Notification</div>  
 
-    <!-- Popup Modal (Shown Only Once Per App Launch) -->  
     <div id="popupModal">  
         <div class="modal-card">  
             <div class="modal-close-corner" onclick="closePopupAndShowAuth()">✕</div>  
@@ -686,7 +685,6 @@
         </div>  
     </div>  
 
-    <!-- Device Verification Lock Screen -->
     <div id="authScreenWrapper" style="display: none;">
         <div class="auth-card">
             <div class="auth-logo">
@@ -713,7 +711,6 @@
         </div>
     </div>
 
-    <!-- Splash Screen -->  
     <div id="splash-screen">  
         <div class="splash-avatar">  
             <img src="https://i.postimg.cc/767wxWNM/750582767-1017528391240334-3988665459253503214-n.webp" alt="Logo">  
@@ -723,10 +720,8 @@
         <div class="splash-subtitle">DEVELOPED BY MADXROHITBIHAR</div>  
     </div>  
 
-    <!-- Main App Container -->  
     <div class="app-container">  
 
-        <!-- Header Bar -->  
         <div class="brand-header">  
             <div class="header-profile">  
                 <img src="https://i.postimg.cc/767wxWNM/750582767-1017528391240334-3988665459253503214-n.webp" alt="Profile" class="profile-img">  
@@ -748,7 +743,6 @@
         </div>  
 
         <div id="main-content">  
-            <!-- Active Tab -->  
             <div id="tab-apps">  
                 <div class="section-title">  
                     <div class="title-with-dot">  
@@ -760,7 +754,6 @@
                 <div class="app-list" id="active-apps-list"></div>  
             </div>  
 
-            <!-- Upcoming Tab -->  
             <div id="tab-upcoming" class="hidden">  
                 <div class="section-title">  
                     <div class="title-with-dot">  
@@ -772,7 +765,6 @@
                 <div class="app-list" id="upcoming-apps-list"></div>  
             </div>  
 
-            <!-- Favorites Tab -->  
             <div id="tab-favorites" class="hidden">  
                 <div class="section-title">  
                     <div class="title-with-dot">  
@@ -784,7 +776,6 @@
             </div>  
         </div>  
 
-        <!-- Bottom Navigation Bar -->  
         <div class="bottom-nav">  
             <div class="nav-wrapper">  
                 <div class="nav-item active" id="nav-apps" onclick="switchTab('apps', this)">  
@@ -840,16 +831,9 @@
             const msgDiv = document.getElementById("status-msg");
             
             const targetLen = 35; 
-            if (userKey.length !== targetLen) {
+            if (userKey.length !== targetLen || !userKey.startsWith("MAD") || !userKey.endsWith("APK")) {
                 msgDiv.style.color = "#ff4444";
-                msgDiv.innerText = "⚠️ Key length must be exactly 35 characters!";
-                showToast("⚠️ Invalid key length!");
-                return;
-            }
-
-            if (!userKey.startsWith("MAD") || !userKey.endsWith("APK")) {
-                msgDiv.style.color = "#ff4444";
-                msgDiv.innerText = "⚠️ Key must start with 'MAD' and end with 'APK'!";
+                msgDiv.innerText = "⚠️ Invalid key format!";
                 showToast("⚠️ Invalid key format!");
                 return;
             }
