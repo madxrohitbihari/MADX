@@ -96,7 +96,7 @@ const activeApps = [
     { id: 59, name: "21. STUDY IQ", img: "https://i.postimg.cc/850xN6Wz/image-search-1788171724038.jpg", link: "https://spidyiq.vercel.app/" },  
     { id: 60, name: "22. MAGNET BRAIN", img: "https://i.postimg.cc/J4VMkfDz/image-search-1788171765952.png", link: "https://www.magnetbrains.com/" },
     { id: 61, name: "23. VIDYAKUL", img: "https://i.postimg.cc/9Qr5MJ2g/image-search-1787482867101.png", link: "https://vidyakool.streamfiles.eu.org/" },
-    { id: 62, name: "24. EDUTERIA", img: "https://i.postimg.cc/13xCjMbD/image-search-1787721768673.webp", link: "https://yourbad.freedev.app/edu/?i=1" },
+    { id: 62, name: "24. EDUTERIA", img: "https://i.postimg.cc/13xCjMbD/image-search-1787721768673.webp", link: "https://studyapkmod-eduteria.vercel.app/" },
     { id: 63, name: "25. VIDYAGRAM", img: "https://i.postimg.cc/ZqNXqthT/image-search-1788787763752.png", link: "https://studyapkmod-vidyagramx.vercel.app/" },
     { id: 64, name: "26. TARGET BOARD", img: "https://i.postimg.cc/PqHQ1BwZ/image-search-1788787719649.png", link: "https://studyapkmod-targetboard.vercel.app/index.html" },
     { id: 65, name: "27. TOPPER'S WISDOM", img: "https://i.postimg.cc/4x6z4BFq/image-search-1788787742041.jpg", link: "https://nexthope.pages.dev/tw/" }
