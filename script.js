@@ -75,8 +75,8 @@ const upcomingCommonLink = "https://madxrohitbihar-app.github.io/UPDATE-POUP/";
 const activeApps = [  
     { id: 1, name: "1. CAREER WILL", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmYE_faasYwfAs0rQKDf4GcuoV7_Ws6ZUqWwmIpuHVSw&s", link: "https://madxrohitbihari.github.io/Cw-test/" },  
     { id: 2, name: "2. KHAN GLOBAL STUDIES", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuCiwfy76ica73byqKIURXqN2Zi2h2Sdw0VJooGkXsyg&s", link: "https://vidyaverse-kgs.vercel.app/" },  
-    { id: 3, name: "3. SELECTION WAY", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10", link: "http://selection-way-ten.vercel.app" },  
-    { id: 4, name: "4. ROJGAR WITH ANKIT", img: "https://i.postimg.cc/fTfdSHbT/image-search-1783668281136.png", link: "http://rwa-website-weld.vercel.app" },  
+    { id: 3, name: "3. SELECTION WAY", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10", link: "http://selection-ways-ten.vercel.app" },  
+    { id: 4, name: "4. ROJGAR WITH ANKIT", img: "https://i.postimg.cc/fTfdSHbT/image-search-1783668281136.png", link: "https://rwa-madxrohitbihar.netlify.app/" },  
     { id: 5, name: "5. PHYSICS WALLA", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1plcMrWwVtz1_zK8I6kbPtktbGikeJ55Ukuaad408XQ&s", link: "https://pwthor.live/study/batches" },  
     { id: 6, name: "6. FUTUREKUL", img: "https://i.postimg.cc/CK0zWrN0/image-search-1784218678678.png", link: "https://futurekul.sumit.qzz.io/" },  
     { id: 7, name: "7. SACHIN ACADEMY", img: "https://i.postimg.cc/MphZTcLR/image-search-1783742533521.jpg", link: "https://sachinclassex1.vercel.app" },  
