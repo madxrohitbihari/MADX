@@ -656,4 +656,4 @@ body {
 }  
 
 .hidden { display: none !important; }  
-.no-data { text-align: center; color: var(--text-secondary); padding: 25px; font-size: 12.5px; font-weight: 600; }
+.no-data { text-align: center; color: var(--text-secondary); padding: 25px; font-size: 12.5px; font-weight: 600; }  
