@@ -27,12 +27,12 @@ function openAroLinks() {
         });
 }
 
-// High Security Key Verification Logic (35 Characters + MAD prefix & APK suffix)
+// High Security Key Verification Logic (33 Characters + MAD prefix & APK suffix)
 function verifyUserKey() {
     const userKey = document.getElementById("accessKeyInput").value.trim().toUpperCase();
     const msgDiv = document.getElementById("status-msg");
     
-    const targetLen = 35; 
+    const targetLen = 33; 
     if (userKey.length !== targetLen || !userKey.startsWith("MAD") || !userKey.endsWith("APK")) {
         msgDiv.style.color = "#ff4444";
         msgDiv.innerText = "⚠️ Invalid key format!";
