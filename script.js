@@ -78,7 +78,7 @@ const activeApps = [
     { id: 3, name: "3. SELECTION WAY", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10", link: "http://selection-ways-ten.vercel.app" },  
     { id: 4, name: "4. ROJGAR WITH ANKIT", img: "https://i.postimg.cc/fTfdSHbT/image-search-1783668281136.png", link: "https://madxrohitbihar-rwa.netlify.app/" },  
     { id: 5, name: "5. PHYSICS WALLA", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1plcMrWwVtz1_zK8I6kbPtktbGikeJ55Ukuaad408XQ&s", link: "https://pwthor.live/study/batches" },  
-    { id: 6, name: "6. FUTUREKUL", img: "https://i.postimg.cc/CK0zWrN0/image-search-1784218678678.png", link: "https://futurekul.sumit.qzz.io/" },  
+    { id: 6, name: "6. FUTUREKUL", img: "https://i.postimg.cc/CK0zWrN0/image-search-1784218678678.png", link: "https://nexthope.pages.dev/futurekul/" },  
     { id: 7, name: "7. SACHIN ACADEMY", img: "https://i.postimg.cc/MphZTcLR/image-search-1783742533521.jpg", link: "https://sachin.studybeepro.site" },  
     { id: 8, name: "8. TEST SERIES", img: "https://i.postimg.cc/Bb9C4KYz/image-search-1785225815998.png", link: "https://repeatermock.com/" },  
     { id: 9, name: "9. CW CTET", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAB_URIwHn37n8wv-FR6lhXAS7clYsz2wD_VbdNlJlGVj6S3KVb1i0cXbi&s=10", link: "https://sangam.free.nf/CW/course_index.html" },  
