@@ -89,17 +89,17 @@ const activeApps = [
     { id: 14, name: "14. UNACADEMY OFFLINE", img: "https://i.postimg.cc/Wz6xPX4L/image-search-1785224943445.jpg", link: "https://uc-web.uc27.workers.dev/" },  
     { id: 15, name: "15. KGS TEST ", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuCiwfy76ica73byqKIURXqN2Zi2h2Sdw0VJooGkXsyg&s", link: "https://studyapkmodkgs.vercel.app/kgstest" },  
     { id: 16, name: "16. GS VISION", img: "https://i.postimg.cc/YSLHMFjS/image-search-1785250907310.png", link: "https://nexthope.pages.dev/gsvision/" },  
-    { id: 17, name: "17. VIBRANT ACADEMY", img: "https://i.postimg.cc/mgx3mfCs/image-search-1785251111107.png", link: "https://www.learnxpw.site/study/vibrant" },  
-    { id: 18, name: "18. PHYSICS PI", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1plcMrWwVtz1_zK8I6kbPtktbGikeJ55Ukuaad408XQ&s", link: "https://pi.pwmarco.info/" },  
+    { id: 17, name: "17. VIBRANT ACADEMY", img: "https://i.postimg.cc/mgx3mfCs/image-search-1785251111107.png", link: "https://learnbyakp.site/vibrant" },  
+    { id: 18, name: "18. PHYSICS PI", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1plcMrWwVtz1_zK8I6kbPtktbGikeJ55Ukuaad408XQ&s", link: "https://studyaura.online/study/pi" },  
     { id: 19, name: "19. CDS JOURNEY", img: "https://i.postimg.cc/tRKNBNTh/image-search-1787230401173.webp", link: "https://cds.streamfiles.eu.org/" },  
     { id: 58, name: "20. APNA COLLEGE", img: "https://i.postimg.cc/jS76CFc0/image-search-1783748117436.png", link: "https://studyapkmod-apnacollege.vercel.app/" },  
     { id: 59, name: "21. STUDY IQ", img: "https://i.postimg.cc/850xN6Wz/image-search-1788171724038.jpg", link: "https://spidyiq.vercel.app/" },  
     { id: 60, name: "22. MAGNET BRAIN", img: "https://i.postimg.cc/J4VMkfDz/image-search-1788171765952.png", link: "https://www.magnetbrains.com/" },
     { id: 61, name: "23. VIDYAKUL", img: "https://i.postimg.cc/9Qr5MJ2g/image-search-1787482867101.png", link: "https://vidyakool.streamfiles.eu.org/" },
     { id: 62, name: "24. EDUTERIA", img: "https://i.postimg.cc/13xCjMbD/image-search-1787721768673.webp", link: "https://studyapkmod-eduteria.vercel.app/" },
-    { id: 63, name: "25. VIDYAGRAM", img: "https://i.postimg.cc/ZqNXqthT/image-search-1788787763752.png", link: "https://studyapkmod-vidyagramx.vercel.app/" },
+    { id: 63, name: "25. parmar And other App ", img: "https://i.postimg.cc/FFyv3N1x/image-search-1790090692923.webp", link: "https://tgdoraemon.vercel.app/" },
     { id: 64, name: "26. TARGET BOARD", img: "https://i.postimg.cc/PqHQ1BwZ/image-search-1788787719649.png", link: "https://studyapkmod-targetboard.vercel.app/index.html" },
-    { id: 65, name: "27. TOPPER'S WISDOM", img: "https://i.postimg.cc/4x6z4BFq/image-search-1788787742041.jpg", link: "https://nexthope.pages.dev/tw/" }
+    { id: 65, name: "27. TOPPER'S WISDOM", img: "https://i.postimg.cc/4x6z4BFq/image-search-1788787742041.jpg", link: "https://studyapkmod-toperwis.vercel.app/" }
 ];  
 
 const upcomingApps = [  
