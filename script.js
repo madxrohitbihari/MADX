@@ -1,3 +1,74 @@
+// AroLinks Integration for Get Key
+function openAroLinks() {
+    const apiToken = "828c34db80ec53e94e7174f5f52e0b274a38ab2d";
+    const targetUrl = "https://madxrohitbihari.github.io/MADX-KEY/";
+    const apiUrl = `https://arolinks.com/api?api=${apiToken}&url=${encodeURIComponent(targetUrl)}`;
+
+    const msgDiv = document.getElementById("status-msg");
+    msgDiv.style.color = "var(--accent-gold)";
+    msgDiv.innerText = "Generating Link...";
+    showToast("Generating Access Link...");
+    
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success" && data.shortenedUrl) {
+                window.location.href = data.shortenedUrl;
+            } else {
+                msgDiv.style.color = "#ff4444";
+                msgDiv.innerText = "Error generating link!";
+                showToast("Error generating link!");
+            }
+        })
+        .catch(() => {
+            msgDiv.style.color = "#ff4444";
+            msgDiv.innerText = "Network Error!";
+            showToast("Network Error!");
+        });
+}
+
+// High Security Key Verification Logic (33 Characters + MAD prefix & APK suffix)
+function verifyUserKey() {
+    const userKey = document.getElementById("accessKeyInput").value.trim().toUpperCase();
+    const msgDiv = document.getElementById("status-msg");
+    
+    const targetLen = 33; 
+    if (userKey.length !== targetLen || !userKey.startsWith("MAD") || !userKey.endsWith("APK")) {
+        msgDiv.style.color = "#ff4444";
+        msgDiv.innerText = "⚠️ Invalid key format!";
+        showToast("⚠️ Invalid key format!");
+        return;
+    }
+
+    let usedKeys = JSON.parse(localStorage.getItem("usedKeysRegistry")) || {};
+    const currentTime = new Date().getTime();
+
+    // Check if this specific key was already used before
+    if (usedKeys[userKey]) {
+        msgDiv.style.color = "#ff4444";
+        msgDiv.innerText = "⚠️ This key has already been used! Please get a new key.";
+        showToast("⚠️ Key already used! Get a new key");
+        return;
+    }
+
+    // Mark this specific key as used permanently
+    usedKeys[userKey] = currentTime;
+    localStorage.setItem("usedKeysRegistry", JSON.stringify(usedKeys));
+
+    // Set global session validity for 24 hours
+    const keyExpiryDuration = 24 * 60 * 60 * 1000;
+    const globalExpiryTime = currentTime + keyExpiryDuration; 
+    localStorage.setItem("appAuthExpiry", globalExpiryTime);
+    
+    msgDiv.style.color = "var(--neon-green)";
+    msgDiv.innerText = "Portal Unlocked Successfully!";
+    showToast("Portal Unlocked Successfully!");
+
+    setTimeout(() => {
+        document.getElementById("authScreenWrapper").style.display = "none";
+    }, 600);
+}
+
 const defaultNewImg = "https://i.postimg.cc/8kv2Mtxv/IMG-20260731-232847-281.jpg";  
 const upcomingCommonLink = "https://madxrohitbihar-app.github.io/UPDATE-POUP/";
 
@@ -199,6 +270,25 @@ document.addEventListener("contextmenu", (e) => {
     return false;
 });
 
+// ==========================================
+// Check verification state on load & history back (`pageshow`)
+// ==========================================
+function checkAuthStatus() {
+    const expiryTime = localStorage.getItem("appAuthExpiry");
+    const currentTime = new Date().getTime();
+    const isVerified = expiryTime && currentTime < expiryTime;
+
+    if (isVerified) {
+        document.getElementById('authScreenWrapper').style.display = 'none';
+    } else {
+        document.getElementById('authScreenWrapper').style.display = 'flex';
+    }
+}
+
+window.addEventListener('pageshow', function(event) {
+    checkAuthStatus();
+});
+
 document.addEventListener("DOMContentLoaded", () => {  
     const splash = document.getElementById("splash-screen");  
       
@@ -217,6 +307,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 500);
     }
 
+    checkAuthStatus();
+
     const savedTab = sessionStorage.getItem('currentActiveTab');
     if (savedTab) {
         const targetNav = document.getElementById(`nav-${savedTab}`);
@@ -226,9 +318,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });  
 
-function closePopupModal() {  
+function closePopupAndShowAuth() {  
     document.getElementById('popupModal').style.display = 'none';  
     sessionStorage.setItem('popupShown', 'true'); 
+
+    checkAuthStatus();
 }  
 
 renderApps();
