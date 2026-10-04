@@ -96,7 +96,7 @@ const activeApps = [
     { id: 69, name: "21. SCIENCE AND FUN", img: "https://i.postimg.cc/gksdc0cV/image-search-1791027234501.jpg", link: "https://madxrohitbihar-app.github.io/science-and-fun-pro/" },
     { id: 3, name: "22. SELECTION WAY", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10", link: "http://selection-ways-ten.vercel.app" },  
     { id: 59, name: "23. STUDY IQ", img: "https://i.postimg.cc/850xN6Wz/image-search-1788171724038.jpg", link: "https://spidyiq.vercel.app/" },  
-    { id: 64, name: "24. TARGET BOARD", img: "https://i.postimg.cc/PqHQ1BwZ/image-search-1788787719649.png", link: "https://ais-pre-2nf54bq7hle7qcwczxouzs-561745921472.asia-east1.run.app/" },  
+    { id: 64, name: "24. TARGET BOARD", img: "https://i.postimg.cc/PqHQ1BwZ/image-search-1788787719649.png", link: "https://madxrohitbihar-app.github.io/Target-board-pro/" },  
     { id: 8, name: "25. TEST SERIES", img: "https://i.postimg.cc/Bb9C4KYz/image-search-1785225815998.png", link: "https://repeatermock.com/" },  
     { id: 67, name: "26. THE OFFICERS ACADEMY", img: "https://i.postimg.cc/4y0hBtmy/image-search-1790939587430.webp", link: "https://studyapkmod-live.vercel.app/?view=courses" },  
     { id: 65, name: "27. TOPPER'S WISDOM", img: "https://i.postimg.cc/4x6z4BFq/image-search-1788787742041.jpg", link: "https://studyapkmod-toperwis.vercel.app/" },  
