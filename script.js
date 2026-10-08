@@ -79,7 +79,7 @@ const activeApps = [
     { id: 9, name: "4. CW CTET", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAB_URIwHn37n8wv-FR6lhXAS7clYsz2wD_VbdNlJlGVj6S3KVb1i0cXbi&s=10", link: "https://sangam.free.nf/CW/course_index.html" },  
     { id: 66, name: "5. DISHA ONLINE CLASSES", img: "https://i.postimg.cc/nL9SkYrp/image-search-1790939575363.png", link: "https://disha-studyapkmod.vercel.app/" },
     { id: 62, name: "6. EDUTERIA", img: "https://i.postimg.cc/13xCjMbD/image-search-1787721768673.webp", link: "https://studyapkmod-eduteria.vercel.app/" },  
-    { id: 6, name: "7. FUTUREKUL", img: "https://i.postimg.cc/CK0zWrN0/image-search-1784218678678.png", link: "https://nexthope.pages.dev/futurekul/" },  
+    { id: 6, name: "7. FUTUREKUL", img: "https://i.postimg.cc/CK0zWrN0/image-search-1784218678678.png", link: "https://madxrohitbihar-app.github.io/futurekul-pro/" },  
     { id: 16, name: "8. GS VISION", img: "https://i.postimg.cc/YSLHMFjS/image-search-1785250907310.png", link: "https://nexthope.pages.dev/gsvision/" },  
     { id: 10, name: "9. IFAS ACADEMY", img: "https://i.postimg.cc/XJdZmMRz/image-search-1784219774648.png", link: "https://sangam.free.nf/IFAS/" },  
     { id: 68, name: "10. KD LIVE", img: "https://i.postimg.cc/brWTQYdG/image-search-1791011692951.jpg", link: "https://kd-live.netlify.app/" },
