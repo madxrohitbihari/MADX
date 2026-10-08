@@ -88,7 +88,7 @@ const activeApps = [
     { id: 60, name: "13. MAGNET BRAIN", img: "https://i.postimg.cc/J4VMkfDz/image-search-1788171765952.png", link: "https://www.magnetbrains.com/" },  
     { id: 11, name: "14. MD CLASSES", img: "https://i.postimg.cc/4dv9v9dL/image-search-1785224691176.png", link: "https://mdclassesx.vercel.app/" },  
     { id: 13, name: "15. NEXT TOPPERS", img: "https://i.postimg.cc/PqjZCyfr/image-search-1785225080041.jpg", link: "https://madxrohitbihar-app.github.io/Next-Toppers-pro/" },  
-    { id: 63, name: "16. PARMAR AND OTHER APP", img: "https://i.postimg.cc/FFyv3N1x/image-search-1790090692923.webp", link: "https://tgdoraemon.vercel.app/" },  
+    { id: 63, name: "16. PARMAR ACADEMY", img: "https://i.postimg.cc/FFyv3N1x/image-search-1790090692923.webp", link: "https://parmar-academy.netlify.app/" },  
     { id: 18, name: "17. PHYSICS PI", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1plcMrWwVtz1_zK8I6kbPtktbGikeJ55Ukuaad408XQ&s", link: "https://studyaura.online/study/pi" },  
     { id: 5, name: "18. PHYSICS WALLA", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1plcMrWwVtz1_zK8I6kbPtktbGikeJ55Ukuaad408XQ&s", link: "https://m.pwmarco.site/study/batches" },  
     { id: 71, name: "19. PHYSICS WALLAH", img: "https://i.postimg.cc/rsNrdjqZ/image-search-1791304602210.webp", link: "https://madxrohitbihar-app.github.io/Physics-pro/" },
