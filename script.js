@@ -96,7 +96,7 @@ const activeApps = [
     { id: 4, name: "21. ROJGAR WITH ANKIT", img: "https://i.postimg.cc/fTfdSHbT/image-search-1783668281136.png", link: "https://madxrohitbihar-rwa.netlify.app/" },  
     { id: 7, name: "22. SACHIN ACADEMY", img: "https://i.postimg.cc/MphZTcLR/image-search-1783742533521.jpg", link: "https://madxrohitbihar-app.github.io/Sachin-Academy-pro/" },  
     { id: 69, name: "23. SCIENCE AND FUN", img: "https://i.postimg.cc/gksdc0cV/image-search-1791027234501.jpg", link: "https://madxrohitbihar-app.github.io/science-and-fun-pro/" },
-    { id: 3, name: "24. SELECTION WAY", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10", link: "http://selection-ways-ten.vercel.app" },  
+    { id: 3, name: "24. SELECTION WAY", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10", link: "https://selectionways-madxrohitbihar.netlify.app/" },  
     { id: 59, name: "25. STUDY IQ", img: "https://i.postimg.cc/850xN6Wz/image-search-1788171724038.jpg", link: "https://spidyiq.vercel.app/" },  
     { id: 64, name: "26. TARGET BOARD", img: "https://i.postimg.cc/PqHQ1BwZ/image-search-1788787719649.png", link: "https://ais-pre-2nf54bq7hle7qcwczxouzs-561745921472.asia-east1.run.app/" },  
     { id: 8, name: "27. TEST SERIES", img: "https://i.postimg.cc/Bb9C4KYz/image-search-1785225815998.png", link: "https://repeatermock.com/" },  
