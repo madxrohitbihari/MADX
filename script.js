@@ -73,7 +73,7 @@ const defaultNewImg = "https://i.postimg.cc/8kv2Mtxv/IMG-20260731-232847-281.jpg
 const upcomingCommonLink = "https://madxrohitbihar-app.github.io/UPDATE-POUP/";
 
 const activeApps = [  
-    { id: 58, name: "1. APNA COLLEGE", img: "https://i.postimg.cc/jS76CFc0/image-search-1783748117436.png", link: "https://studyapkmod-apnacollege.vercel.app/" },  
+    { id: 58, name: "1. APNA COLLEGE", img: "https://i.postimg.cc/jS76CFc0/image-search-1783748117436.png", link: "https://madxrohitbihar-app.github.io/Apna-collgeg-pro/" },  
     { id: 1, name: "2. CAREER WILL", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmYE_faasYwfAs0rQKDf4GcuoV7_Ws6ZUqWwmIpuHVSw&s", link: "https://madxrohitbihar-app.github.io/Careerwill-2pro/" },  
     { id: 70, name: "3. CAREERWILL 2", img: "https://i.postimg.cc/fW3pxXNF/image-search-1791302510366.png", link: "https://madxrohitbihar-app.github.io/Careerwill/" },
     { id: 19, name: "4. CDS JOURNEY", img: "https://i.postimg.cc/tRKNBNTh/image-search-1787230401173.webp", link: "https://cds.streamfiles.eu.org/" },
