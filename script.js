@@ -27,13 +27,13 @@ function openAroLinks() {
         });
 }
 
-// High Security Key Verification Logic (33 Characters + MAD prefix & APN suffix)
+// High Security Key Verification Logic (33 Characters + MAD prefix & APK suffix)
 function verifyUserKey() {
     const userKey = document.getElementById("accessKeyInput").value.trim().toUpperCase();
     const msgDiv = document.getElementById("status-msg");
     
     const targetLen = 33; 
-    if (userKey.length !== targetLen || !userKey.startsWith("MAD") || !userKey.endsWith("APN")) {
+    if (userKey.length !== targetLen || !userKey.startsWith("MAD") || !userKey.endsWith("APK")) {
         msgDiv.style.color = "#ff4444";
         msgDiv.innerText = "⚠ Invalid key format!";
         showToast("⚠️ Invalid key format!");
@@ -63,12 +63,6 @@ function verifyUserKey() {
     msgDiv.style.color = "var(--neon-green)";
     msgDiv.innerText = "Portal Unlocked Successfully!";
     showToast("Portal Unlocked Successfully!");
-
-    // Clear pending timer and hide auth screen immediately
-    if (authTimeout) {
-        clearTimeout(authTimeout);
-        authTimeout = null;
-    }
 
     setTimeout(() => {
         document.getElementById("authScreenWrapper").style.display = "none";
@@ -276,38 +270,23 @@ document.addEventListener("contextmenu", (e) => {
 });
 
 // ==========================================
-// Strict Verification Check (4 Seconds Delay for Unverified Users)
+// Check verification state on load & history back (`pageshow`)
 // ==========================================
-let authTimeout = null;
-
 function checkAuthStatus() {
     const expiryTime = localStorage.getItem("appAuthExpiry");
     const currentTime = new Date().getTime();
     const isVerified = expiryTime && currentTime < expiryTime;
 
     if (isVerified) {
-        if (authTimeout) {
-            clearTimeout(authTimeout);
-            authTimeout = null;
-        }
         document.getElementById('authScreenWrapper').style.display = 'none';
     } else {
-        // Agar verify nahi hai toh exactly 4 Seconds (4000ms) baad screen par lock overlay le aayega
-        if (!authTimeout) {
-            authTimeout = setTimeout(() => {
-                const currentExpiry = localStorage.getItem("appAuthExpiry");
-                const now = new Date().getTime();
-                if (!(currentExpiry && now < currentExpiry)) {
-                    document.getElementById('authScreenWrapper').style.display = 'flex';
-                }
-            }, 4000); // 4 Seconds Delay
-        }
+        document.getElementById('authScreenWrapper').style.display = 'flex';
     }
 }
 
-// Ensure trigger works on window load, back navigation and focus change
-window.addEventListener('pageshow', checkAuthStatus);
-window.addEventListener('focus', checkAuthStatus);
+window.addEventListener('pageshow', function(event) {
+    checkAuthStatus();
+});
 
 document.addEventListener("DOMContentLoaded", () => {  
     const splash = document.getElementById("splash-screen");  
