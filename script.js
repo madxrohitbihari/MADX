@@ -64,7 +64,7 @@ function verifyUserKey() {
     msgDiv.innerText = "Portal Unlocked Successfully!";
     showToast("Portal Unlocked Successfully!");
 
-    // Clear any pending timeout and hide auth screen immediately on successful verification
+    // Clear pending timer and hide auth screen immediately
     if (authTimeout) {
         clearTimeout(authTimeout);
         authTimeout = null;
@@ -96,7 +96,7 @@ const activeApps = [
     { id: 100, name: "15. PHYSICS WALLAH", img: "https://i.postimg.cc/ZRMVR91P/image-search-1791519463252.webp", link: "https://madxrohitbihar-app.github.io/Physics-pro/" },
     { id: 102, name: "16. PHYSICS PI", img: "https://i.postimg.cc/ZRMVR91P/image-search-1791519463252.webp", link: "http://pi.studyparcham.site" },
     { id: 20, name: "17. RG VIKRAMJEET", img: "https://i.postimg.cc/cLqhCJVD/image-search-1791011678203.png", link: "https://madxrohitbihar-app.github.io/Rg-Vikramjeet/" },
-    { id: 4, name: "18. ROJGAR WITH ANKIT", img: "https://i.postimg.cc/fTfdSHbT/image-search-1783668281136.png", link: "https://madxrohitbihar-rwa.netlify.app/" },  
+    { id: 4, name: "18. ROJGAR WITH ANKIT", img: "https://i.postimg.cc/fTfdSHbT/image-search-1783668281136.png", link: "https://madxrohitbihar-app.github.io/RWA-Pro/" },  
     { id: 3, name: "19. SELECTION WAY", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10", link: "https://old-meadow-c959.madxrohitbihar.workers.dev/" },  
     { id: 59, name: "20. STUDY IQ", img: "https://i.postimg.cc/850xN6Wz/image-search-1788171724038.jpg", link: "https://spidyiq.vercel.app/" },  
     { id: 8, name: "21. TEST SERIES", img: "https://i.postimg.cc/Bb9C4KYz/image-search-1785225815998.png", link: "https://repeatermock.com/" },  
@@ -276,7 +276,7 @@ document.addEventListener("contextmenu", (e) => {
 });
 
 // ==========================================
-// Check verification state with 6 Seconds Delay for unverified users
+// Strict Verification Check (4 Seconds Delay for Unverified Users)
 // ==========================================
 let authTimeout = null;
 
@@ -292,23 +292,22 @@ function checkAuthStatus() {
         }
         document.getElementById('authScreenWrapper').style.display = 'none';
     } else {
-        // Agar verified nahi hai, toh 6 seconds (6000ms) baad verification screen show karega
+        // Agar verify nahi hai toh exactly 4 Seconds (4000ms) baad screen par lock overlay le aayega
         if (!authTimeout) {
             authTimeout = setTimeout(() => {
                 const currentExpiry = localStorage.getItem("appAuthExpiry");
                 const now = new Date().getTime();
-                // Dobara check karega ki kahin 6 sec ke andar user ne verify toh nahi kar liya
                 if (!(currentExpiry && now < currentExpiry)) {
                     document.getElementById('authScreenWrapper').style.display = 'flex';
                 }
-            }, 6000); // 6 Seconds delay
+            }, 4000); // 4 Seconds Delay
         }
     }
 }
 
-window.addEventListener('pageshow', function(event) {
-    checkAuthStatus();
-});
+// Ensure trigger works on window load, back navigation and focus change
+window.addEventListener('pageshow', checkAuthStatus);
+window.addEventListener('focus', checkAuthStatus);
 
 document.addEventListener("DOMContentLoaded", () => {  
     const splash = document.getElementById("splash-screen");  
