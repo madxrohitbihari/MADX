@@ -27,13 +27,13 @@ function openAroLinks() {
         });
 }
 
-// High Security Key Verification Logic (33 Characters + MAD prefix & APK suffix)
+// High Security Key Verification Logic (33 Characters + MAD prefix & APN suffix)
 function verifyUserKey() {
     const userKey = document.getElementById("accessKeyInput").value.trim().toUpperCase();
     const msgDiv = document.getElementById("status-msg");
     
     const targetLen = 33; 
-    if (userKey.length !== targetLen || !userKey.startsWith("MAD") || !userKey.endsWith("APK")) {
+    if (userKey.length !== targetLen || !userKey.startsWith("MAD") || !userKey.endsWith("APN")) {
         msgDiv.style.color = "#ff4444";
         msgDiv.innerText = "⚠ Invalid key format!";
         showToast("⚠️ Invalid key format!");
@@ -64,6 +64,12 @@ function verifyUserKey() {
     msgDiv.innerText = "Portal Unlocked Successfully!";
     showToast("Portal Unlocked Successfully!");
 
+    // Clear any pending timeout and hide auth screen immediately on successful verification
+    if (authTimeout) {
+        clearTimeout(authTimeout);
+        authTimeout = null;
+    }
+
     setTimeout(() => {
         document.getElementById("authScreenWrapper").style.display = "none";
     }, 600);
@@ -90,7 +96,7 @@ const activeApps = [
     { id: 100, name: "15. PHYSICS WALLAH", img: "https://i.postimg.cc/ZRMVR91P/image-search-1791519463252.webp", link: "https://madxrohitbihar-app.github.io/Physics-pro/" },
     { id: 102, name: "16. PHYSICS PI", img: "https://i.postimg.cc/ZRMVR91P/image-search-1791519463252.webp", link: "http://pi.studyparcham.site" },
     { id: 20, name: "17. RG VIKRAMJEET", img: "https://i.postimg.cc/cLqhCJVD/image-search-1791011678203.png", link: "https://madxrohitbihar-app.github.io/Rg-Vikramjeet/" },
-    { id: 4, name: "18. ROJGAR WITH ANKIT", img: "https://i.postimg.cc/fTfdSHbT/image-search-1783668281136.png", link: "https://madxrohitbihar-app.github.io/RWA-Pro/" },  
+    { id: 4, name: "18. ROJGAR WITH ANKIT", img: "https://i.postimg.cc/fTfdSHbT/image-search-1783668281136.png", link: "https://madxrohitbihar-rwa.netlify.app/" },  
     { id: 3, name: "19. SELECTION WAY", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10", link: "https://old-meadow-c959.madxrohitbihar.workers.dev/" },  
     { id: 59, name: "20. STUDY IQ", img: "https://i.postimg.cc/850xN6Wz/image-search-1788171724038.jpg", link: "https://spidyiq.vercel.app/" },  
     { id: 8, name: "21. TEST SERIES", img: "https://i.postimg.cc/Bb9C4KYz/image-search-1785225815998.png", link: "https://repeatermock.com/" },  
@@ -270,17 +276,33 @@ document.addEventListener("contextmenu", (e) => {
 });
 
 // ==========================================
-// Check verification state on load & history back (`pageshow`)
+// Check verification state with 6 Seconds Delay for unverified users
 // ==========================================
+let authTimeout = null;
+
 function checkAuthStatus() {
     const expiryTime = localStorage.getItem("appAuthExpiry");
     const currentTime = new Date().getTime();
     const isVerified = expiryTime && currentTime < expiryTime;
 
     if (isVerified) {
+        if (authTimeout) {
+            clearTimeout(authTimeout);
+            authTimeout = null;
+        }
         document.getElementById('authScreenWrapper').style.display = 'none';
     } else {
-        document.getElementById('authScreenWrapper').style.display = 'flex';
+        // Agar verified nahi hai, toh 6 seconds (6000ms) baad verification screen show karega
+        if (!authTimeout) {
+            authTimeout = setTimeout(() => {
+                const currentExpiry = localStorage.getItem("appAuthExpiry");
+                const now = new Date().getTime();
+                // Dobara check karega ki kahin 6 sec ke andar user ne verify toh nahi kar liya
+                if (!(currentExpiry && now < currentExpiry)) {
+                    document.getElementById('authScreenWrapper').style.display = 'flex';
+                }
+            }, 6000); // 6 Seconds delay
+        }
     }
 }
 
