@@ -1,6 +1,6 @@
 // AroLinks Integration for Get Key
 function openAroLinks() {
-    const apiToken = "828c34db80ec53e94e7174f5f52e0b274a38ab2d";
+    const apiToken = "0aa19e644db340e405f3b7654cdc70f70d705966";
     const targetUrl = "https://madxrohitbihari.github.io/MADX-KEY/";
     const apiUrl = `https://arolinks.com/api?api=${apiToken}&url=${encodeURIComponent(targetUrl)}`;
 
