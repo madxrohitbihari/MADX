@@ -41,7 +41,8 @@ function verifyUserKey() {
     const msgDiv = document.getElementById("status-msg");
     
     const targetLen = 33; 
-    if (userKey.length !== targetLen || !userKey.startsWith("MAD") || !userKey.endsWith("AAP")) {
+    // Updated prefix to "MAD" and suffix to "APN"
+    if (userKey.length !== targetLen || !userKey.startsWith("MAD") || !userKey.endsWith("APN")) {
         msgDiv.style.color = "#ff4444";
         msgDiv.innerText = "⚠ Invalid key format!";
         showToast("⚠️ Invalid key format!");
