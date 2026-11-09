@@ -8,73 +8,6 @@
     }
 })();
 
-function openAroLinks() {
-    const apiToken = "0aa19e644db340e405f3b7654cdc70f70d705966";
-    const targetUrl = "https://madxrohitbihari.github.io/MADX-KEY/";
-    const apiUrl = `https://arolinks.com/api?api=${apiToken}&url=${encodeURIComponent(targetUrl)}`;
-
-    const msgDiv = document.getElementById("status-msg");
-    msgDiv.style.color = "var(--accent-gold)";
-    msgDiv.innerText = "Generating Link...";
-    showToast("Generating Access Link...");
-    
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === "success" && data.shortenedUrl) {
-                window.location.href = data.shortenedUrl;
-            } else {
-                msgDiv.style.color = "#ff4444";
-                msgDiv.innerText = "Error generating link!";
-                showToast("Error generating link!");
-            }
-        })
-        .catch(() => {
-            msgDiv.style.color = "#ff4444";
-            msgDiv.innerText = "Network Error!";
-            showToast("Network Error!");
-        });
-}
-
-function verifyUserKey() {
-    const userKey = document.getElementById("accessKeyInput").value.trim().toUpperCase();
-    const msgDiv = document.getElementById("status-msg");
-    
-    const targetLen = 33; 
-    // Updated prefix to "MAD" and suffix to "APN"
-    if (userKey.length !== targetLen || !userKey.startsWith("MAD") || !userKey.endsWith("APN")) {
-        msgDiv.style.color = "#ff4444";
-        msgDiv.innerText = "⚠ Invalid key format!";
-        showToast("⚠️ Invalid key format!");
-        return;
-    }
-
-    let usedKeys = JSON.parse(localStorage.getItem("usedKeysRegistry")) || {};
-    const currentTime = new Date().getTime();
-
-    if (usedKeys[userKey]) {
-        msgDiv.style.color = "#ff4444";
-        msgDiv.innerText = "⚠️ This key has already been used! Please get a new key.";
-        showToast("⚠️ Key already used! Get a new key");
-        return;
-    }
-
-    usedKeys[userKey] = currentTime;
-    localStorage.setItem("usedKeysRegistry", JSON.stringify(usedKeys));
-
-    const keyExpiryDuration = 24 * 60 * 60 * 1000;
-    const globalExpiryTime = currentTime + keyExpiryDuration; 
-    localStorage.setItem("appAuthExpiry", globalExpiryTime);
-    
-    msgDiv.style.color = "var(--neon-green)";
-    msgDiv.innerText = "Portal Unlocked Successfully!";
-    showToast("Portal Unlocked Successfully!");
-
-    setTimeout(() => {
-        document.getElementById("authScreenWrapper").style.display = "none";
-    }, 600);
-}
-
 const defaultNewImg = "https://i.postimg.cc/8kv2Mtxv/IMG-20260731-232847-281.jpg";  
 const upcomingCommonLink = "https://madxrohitbihar-app.github.io/UPDATE-POUP/";
 
@@ -175,7 +108,6 @@ function setAppTheme(themeName) {
     setTimeout(() => toggleThemeDrawer(), 250);
 }
 
-// Initialize active state of theme buttons on load
 function initThemeUI() {
     const savedTheme = localStorage.getItem('selectedPortalTheme') || 'gold';
     document.querySelectorAll('.theme-opt-btn').forEach(btn => btn.classList.remove('active'));
@@ -306,22 +238,6 @@ document.addEventListener("contextmenu", (e) => {
     return false;
 });
 
-function checkAuthStatus() {
-    const expiryTime = localStorage.getItem("appAuthExpiry");
-    const currentTime = new Date().getTime();
-    const isVerified = expiryTime && currentTime < expiryTime;
-
-    if (isVerified) {
-        document.getElementById('authScreenWrapper').style.display = 'none';
-    } else {
-        document.getElementById('authScreenWrapper').style.display = 'flex';
-    }
-}
-
-window.addEventListener('pageshow', function(event) {
-    checkAuthStatus();
-});
-
 document.addEventListener("DOMContentLoaded", () => {  
     const splash = document.getElementById("splash-screen");  
       
@@ -340,7 +256,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 500);
     }
 
-    checkAuthStatus();
     initThemeUI();
 
     const savedTab = sessionStorage.getItem('currentActiveTab');
@@ -352,11 +267,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });  
 
-function closePopupAndShowAuth() {  
+function closePopup() {  
     document.getElementById('popupModal').style.display = 'none';  
     sessionStorage.setItem('popupShown', 'true'); 
-
-    checkAuthStatus();
 }  
 
 renderApps();
