@@ -332,13 +332,16 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {  
             splash.classList.add("hide-splash");  
             sessionStorage.setItem('splashShown', 'true');  
+
+            // Splash screen hatne ke turant baad popup sirf ek baar aayega is session me
+            if (!sessionStorage.getItem('popupShownOnce')) {
+                document.getElementById('popupModal').style.display = 'flex';
+            }
         }, 4000);  
     } else {  
         splash.style.display = 'none';  
+        checkAuthStatus();
     }  
-
-    // Popup hamesha open hote hi dikhega (chahe user verified ho ya nahi)
-    document.getElementById('popupModal').style.display = 'flex';
 
     setTimeout(() => {
         renderApps();
@@ -353,5 +356,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function closePopup() {  
     document.getElementById('popupModal').style.display = 'none';  
+    sessionStorage.setItem('popupShownOnce', 'true');
     checkAuthStatus();
 }

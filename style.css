@@ -109,7 +109,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999999; /* Below popupModal */
+    z-index: 999999;
     padding: 20px;
 }
 
@@ -873,7 +873,7 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 99999999; /* Highest layer to ensure it shows over auth screen */
+    z-index: 99999999;
     padding: 20px;
 }
 
