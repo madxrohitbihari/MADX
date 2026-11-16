@@ -337,11 +337,10 @@ document.addEventListener("DOMContentLoaded", () => {
         splash.style.display = 'none';  
     }  
 
-    if (!sessionStorage.getItem('popupShown')) {
-        setTimeout(() => { document.getElementById('popupModal').style.display = 'flex'; }, 500);
-    } else {
-        checkAuthStatus();
-    }
+    // Popup ab app open hote hi hamesha dikhega (chahe user verified ho ya nahi)
+    setTimeout(() => { 
+        document.getElementById('popupModal').style.display = 'flex'; 
+    }, 500);
 
     setTimeout(() => {
         renderApps();
@@ -356,6 +355,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function closePopupAndShowAuth() {  
     document.getElementById('popupModal').style.display = 'none';  
-    sessionStorage.setItem('popupShown', 'true'); 
     checkAuthStatus();
 }
