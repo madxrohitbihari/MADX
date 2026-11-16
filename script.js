@@ -337,10 +337,8 @@ document.addEventListener("DOMContentLoaded", () => {
         splash.style.display = 'none';  
     }  
 
-    // Popup ab app open hote hi hamesha dikhega (chahe user verified ho ya nahi)
-    setTimeout(() => { 
-        document.getElementById('popupModal').style.display = 'flex'; 
-    }, 500);
+    // Popup hamesha open hote hi dikhega (chahe user verified ho ya nahi)
+    document.getElementById('popupModal').style.display = 'flex';
 
     setTimeout(() => {
         renderApps();
@@ -353,7 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });  
 
-function closePopupAndShowAuth() {  
+function closePopup() {  
     document.getElementById('popupModal').style.display = 'none';  
     checkAuthStatus();
 }

@@ -109,7 +109,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99999999;
+    z-index: 999999; /* Below popupModal */
     padding: 20px;
 }
 
@@ -649,7 +649,6 @@ body {
     flex-shrink: 0;  
 }  
 
-/* --- RESTORED ORIGINAL PERFECT LIGHT CYAN GRADIENT STYLE FOR BUTTONS --- */
 .fav-btn {  
     background: linear-gradient(135deg, rgba(0, 243, 255, 0.1), rgba(0, 102, 255, 0.1));  
     border: 1.5px solid var(--accent-cyan);  
@@ -691,7 +690,6 @@ body {
     background: var(--accent-cyan);
     color: #000;
 }
-/* ------------------------------------------------------------------------ */
 
 .server-modal {
     position: fixed;
@@ -875,13 +873,14 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 9999999;
+    z-index: 99999999; /* Highest layer to ensure it shows over auth screen */
     padding: 20px;
 }
 
 .theme-drawer-modal {
     justify-content: flex-end;
     align-items: flex-end;
+    z-index: 9999999;
 }
 
 .theme-drawer-card {
