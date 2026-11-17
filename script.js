@@ -109,38 +109,26 @@ function checkAuthStatus() {
 
 const activeApps = [  
     { id: 58, name: "1. APNA COLLEGE", img: "https://i.postimg.cc/jS76CFc0/image-search-1783748117436.png", link: "https://apnacollgegpro.madxrohitbihar-1ce.workers.dev/" },  
-    { 
-        id: 1, 
-        name: "2. CAREER WILL (ALL SERVERS)", 
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmYE_faasYwfAs0rQKDf4GcuoV7_Ws6ZUqWwmIpuHVSw&s", 
-        isMultiServer: true,
-        servers: [
-            { name: "Server 1", link: "https://madxrohitbihar-app.github.io/Careerwill-2pro/" },
-            { name: "Server 2", link: "https://madxrohitbihar-app.github.io/Careerwill/" },
-            { name: "Server 3", link: "https://sangam.free.nf/CW/course_index.html" }
-        ]
-    },  
+    { id: 1, name: "2. CAREER WILL", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmYE_faasYwfAs0rQKDf4GcuoV7_Ws6ZUqWwmIpuHVSw&s", link: "https://sangam.free.nf/CW/course_index.html" },  
     { id: 19, name: "3. CDS JOURNEY", img: "https://i.postimg.cc/tRKNBNTh/image-search-1787230401173.webp", link: "https://cds.streamfiles.eu.org/" },
-    { id: 66, name: "4. DISHA ONLINE CLASSES", img: "https://i.postimg.cc/nL9SkYrp/image-search-1790939575363.png", link: "https://disha-studyapkmod.vercel.app/" },
-    { id: 6, name: "5. FUTUREKUL", img: "https://i.postimg.cc/CK0zWrN0/image-search-1784218678678.png", link: "https://futurekulpro.madxrohitbihar-1ce.workers.dev/" },  
-    { id: 16, name: "6. GS VISION", img: "https://i.postimg.cc/YSLHMFjS/image-search-1785250907310.png", link: "https://madxrohitbihar-app.github.io/GS-Vision/" },  
-    { id: 10, name: "7. IFAS ACADEMY", img: "https://i.postimg.cc/XJdZmMRz/image-search-1784219774648.png", link: "https://sangam.free.nf/IFAS/" },  
-    { id: 60, name: "8. MAGNET BRAIN", img: "https://i.postimg.cc/J4VMkfDz/image-search-1788171765952.png", link: "https://www.magnetbrains.com/" },  
-    { id: 72, name: "9. MISSION JEET", img: "https://i.postimg.cc/V6j70XqJ/image-search-1792039762960.png", link: "https://missionjeet.madxrohitbihar-1ce.workers.dev/" },
-    { id: 13, name: "10. NEXT TOPPERS", img: "https://i.postimg.cc/PqjZCyfr/image-search-1785225080041.jpg", link: "https://nexttopperspro.madxrohitbihar-1ce.workers.dev/" },  
-    { id: 101, name: "11. PARMAR Academy", img: "https://i.postimg.cc/sxYz6q2p/image-search-1792562519230.webp", link: "https://parmar.madxrohitbihar-1ce.workers.dev/" },
-    { id: 105, name: "12. PARMAR Academy 2", img: "https://i.postimg.cc/65gXYjC5/image-search-1793367333359.jpg", link: "https://modeduzone.netlify.app/" },
-    { id: 100, name: "13. PHYSICS WALLAH", img: "https://i.postimg.cc/ZRMVR91P/image-search-1791519463252.webp", link: "https://physicspro.madxrohitbihar-1ce.workers.dev/" },
-    { id: 102, name: "14. PHYSICS PI", img: "https://i.postimg.cc/ZRMVR91P/image-search-1791519463252.webp", link: "http://pi.studyparcham.site" },
-    { id: 20, name: "15. RG VIKRAMJEET", img: "https://i.postimg.cc/cLqhCJVD/image-search-1791011678203.png", link: "https://learnbyakp.site/vikaram" },
-    { id: 4, name: "16. ROJGAR WITH ANKIT", img: "https://i.postimg.cc/fTfdSHbT/image-search-1783668281136.png", link: "https://ais-pre-puxho4o57upkknekv3mgg7-49225910278.asia-east1.run.app/" },  
-    { id: 3, name: "17. SELECTION WAY", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10", link: "https://swnexusstudy.pages.dev/" },  
-    { id: 59, name: "18. STUDY IQ", img: "https://i.postimg.cc/850xN6Wz/image-search-1788171724038.jpg", link: "https://spidyiq.vercel.app/" },  
-    { id: 8, name: "19. TEST SERIES", img: "https://i.postimg.cc/Bb9C4KYz/image-search-1785225815998.png", link: "https://repeatermock.com/" },  
-    { id: 12, name: "20. UNACADEMY", img: "https://i.postimg.cc/Wz6xPX4L/image-search-1785224943445.jpg", link: "https://unacdemy-pro1.madxrohitbihar-1ce.workers.dev/" },  
-    { id: 71, name: "21. UNACADEMY ONLINE", img: "https://i.postimg.cc/Wz6xPX4L/image-search-1785224943445.jpg", link: "https://unacdemypro.madxrohitbihar-1ce.workers.dev/" },
-    { id: 17, name: "22. VIBRANT ACADEMY", img: "https://i.postimg.cc/mgx3mfCs/image-search-1785251111107.png", link: "https://learnbyakp.site/vibrant" },  
-    { id: 61, name: "23. VIDYAKHUL", img: "https://i.postimg.cc/9Qr5MJ2g/image-search-1787482867101.png", link: "https://vidyakool.streamfiles.eu.org/" }
+    { id: 6, name: "4. FUTUREKUL", img: "https://i.postimg.cc/CK0zWrN0/image-search-1784218678678.png", link: "https://futurekulpro.madxrohitbihar-1ce.workers.dev/" },  
+    { id: 10, name: "5. IFAS ACADEMY", img: "https://i.postimg.cc/XJdZmMRz/image-search-1784219774648.png", link: "https://sangam.free.nf/IFAS/" },  
+    { id: 60, name: "6. MAGNET BRAIN", img: "https://i.postimg.cc/J4VMkfDz/image-search-1788171765952.png", link: "https://www.magnetbrains.com/" },  
+    { id: 72, name: "7. MISSION JEET", img: "https://i.postimg.cc/V6j70XqJ/image-search-1792039762960.png", link: "https://missionjeet.madxrohitbihar-1ce.workers.dev/" },
+    { id: 13, name: "8. NEXT TOPPERS", img: "https://i.postimg.cc/PqjZCyfr/image-search-1785225080041.jpg", link: "https://nexttopperspro.madxrohitbihar-1ce.workers.dev/" },  
+    { id: 101, name: "9. PARMAR Academy", img: "https://i.postimg.cc/sxYz6q2p/image-search-1792562519230.webp", link: "https://parmar.madxrohitbihar-1ce.workers.dev/" },
+    { id: 105, name: "10. PARMAR Academy 2", img: "https://i.postimg.cc/65gXYjC5/image-search-1793367333359.jpg", link: "https://modeduzone.netlify.app/" },
+    { id: 100, name: "11. PHYSICS WALLAH", img: "https://i.postimg.cc/ZRMVR91P/image-search-1791519463252.webp", link: "https://physicspro.madxrohitbihar-1ce.workers.dev/" },
+    { id: 102, name: "12. PHYSICS PI", img: "https://i.postimg.cc/ZRMVR91P/image-search-1791519463252.webp", link: "http://pi.studyparcham.site" },
+    { id: 20, name: "13. RG VIKRAMJEET", img: "https://i.postimg.cc/cLqhCJVD/image-search-1791011678203.png", link: "https://learnbyakp.site/vikaram" },
+    { id: 4, name: "14. ROJGAR WITH ANKIT", img: "https://i.postimg.cc/fTfdSHbT/image-search-1783668281136.png", link: "https://ais-pre-puxho4o57upkknekv3mgg7-49225910278.asia-east1.run.app/" },  
+    { id: 3, name: "15. SELECTION WAY", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRquIqVyakcgsPuAsFkSm34nPLKZ_IY2W0-Rj5sd1-T-g&s=10", link: "https://swnexusstudy.pages.dev/" },  
+    { id: 59, name: "16. STUDY IQ", img: "https://i.postimg.cc/850xN6Wz/image-search-1788171724038.jpg", link: "https://spidyiq.vercel.app/" },  
+    { id: 8, name: "17. TEST SERIES", img: "https://i.postimg.cc/Bb9C4KYz/image-search-1785225815998.png", link: "https://repeatermock.com/" },  
+    { id: 12, name: "18. UNACADEMY", img: "https://i.postimg.cc/Wz6xPX4L/image-search-1785224943445.jpg", link: "https://unacdemy-pro1.madxrohitbihar-1ce.workers.dev/" },  
+    { id: 71, name: "19. UNACADEMY ONLINE", img: "https://i.postimg.cc/Wz6xPX4L/image-search-1785224943445.jpg", link: "https://unacdemypro.madxrohitbihar-1ce.workers.dev/" },
+    { id: 17, name: "20. VIBRANT ACADEMY", img: "https://i.postimg.cc/mgx3mfCs/image-search-1785251111107.png", link: "https://learnbyakp.site/vibrant" },  
+    { id: 61, name: "21. VIDYAKHUL", img: "https://i.postimg.cc/9Qr5MJ2g/image-search-1787482867101.png", link: "https://vidyakool.streamfiles.eu.org/" }
 ];  
 
 const upcomingApps = [];  
